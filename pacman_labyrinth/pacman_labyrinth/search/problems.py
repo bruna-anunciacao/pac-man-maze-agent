@@ -47,7 +47,7 @@ class GridPlanningProblem:
         return pos == self.goal
 
     def heuristic(self, pos: Position) -> int:
-        raise NotImplementedError("heurística não implementada!")
+       return abs(pos.row - self.goal.row) + abs(pos.col - self.goal.col)
 
     def successors(self, pos: Position) -> list[tuple[Action, Position, float]]:
         if self.recorder is not None:
